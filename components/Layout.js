@@ -4,9 +4,11 @@ import Meta from './Meta'
 
 const layoutStyle = {
   fontFamily: 'futura',
+  display: 'flex',
+  height: '100vh',
   margin: 0,
   padding: 0,
-  borderWidth: '0px'
+  'zIndex': 0,
 }
 
 const Layout = props => {
