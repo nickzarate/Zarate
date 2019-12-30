@@ -1,5 +1,5 @@
 import { PureComponent } from 'react'
-import { home } from '../assets/colors'
+import { darkGray } from '../assets/colors'
 import Link from 'next/link'
 
 class Tab extends PureComponent {
@@ -8,20 +8,20 @@ class Tab extends PureComponent {
   }
 
   handleClick = () => {
-    this.props.onClick(this.props.children)
+    this.props.onClick(this.props.tab)
   }
 
   render() {
     return (
-      <Link href={ '/' + this.props.children }>
+      <Link href={ '#' + this.props.tab }>
         <p
           onClick={ this.handleClick }
           style={{ ...styles.tabText,
-            color: this.props.active ? home : 'white',
-            backgroundColor: this.props.active ? 'white' : home
+            color: this.props.active ? darkGray : 'white',
+            backgroundColor: this.props.active ? 'white' : 'transparent'
           }}
         >
-          { this.props.children.toUpperCase() }
+          { this.props.tab }
         </p>
       </Link>
     )
@@ -30,12 +30,14 @@ class Tab extends PureComponent {
 
 const styles = {
   tabText: {
-    color: 'white',
     fontSize: 14,
     fontWeight: 'bold',
     padding: '0px 5px 0px 5px',
-    margin: '0% 1.5% 0% 1.5%',
-    borderRadius: '3px'
+    margin: '.25em 0em .25em 0em',
+    borderRadius: '3px',
+    'zIndex': 1,
+    width: 'fit-content',
+    textTransform: 'uppercase',
   }
 }
 

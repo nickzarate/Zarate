@@ -1,7 +1,6 @@
 import { PureComponent } from 'react'
 import Link from 'next/link'
 import Tab from './Tab'
-import { home } from '../assets/colors'
 import { useRouter } from 'next/router'
 
 class Navbar extends PureComponent {
