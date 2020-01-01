@@ -1,0 +1,23 @@
+#home-title {
+  font-size: 7em;
+  display: flex;
+  font-family: Bungee Shade;
+  color: white;
+  // background-color: $dark;
+  margin: .3em 0em .0em 0em;
+  font-weight: normal;
+}
+
+#home-subtitle {
+  display: flex;
+  font-size: .75em;
+  margin-top: 2em;
+  color: $medium;
+}
+
+.home {
+  align-items: center;
+  justify-content: flex-start;
+  background: linear-gradient(rgb(84, 84, 84) 90%, white);
+  margin-top: 0;
+}
