@@ -1,10 +1,9 @@
 import Layout from '../components/Layout'
-import { darkGray } from '../assets/colors'
 
 const Blog = () => (
-  <Layout>
-    <h1 style={{ backgroundColor: darkGray, marginTop: 0, height: 1000 }}>Blog.</h1>
-  </Layout>
+  <div className='blog flexrow'>
+    <h1 style={{ backgroundColor: 'gray', marginTop: 0 }}>Blog.</h1>
+  </div>
 )
 
 export default Blog

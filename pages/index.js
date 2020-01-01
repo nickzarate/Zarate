@@ -1,7 +1,9 @@
 import Layout from '../components/Layout'
 import { Component } from 'react'
-import { darkGray, blue } from '../assets/colors'
 import Icons from '../components/Icons'
+import About from './about'
+import Projects from './projects'
+import Blog from './blog'
 
 class Home extends Component {
   constructor(props) {
@@ -11,34 +13,16 @@ class Home extends Component {
   render () {
     return (
       <Layout>
-        <div style={ styles.container }>
-          <p style={ styles.title }>DATA</p>
-          <h2 style={ styles.subText }>Let's learn something.</h2>
-          <Icons width='4vw' height='4vh' />
+        <div className='flexcol home' onClick={ () => console.log(document.getElementsByClassName('icon-container')) }>
+          <h1 id='home-title'>DATA</h1>
+          <h2 id='home-subtitle'>Let's learn something.</h2>
+          <Icons />
         </div>
+        <About />
+        <Projects />
+        <Blog />
       </Layout>
     )
-  }
-}
-
-const styles = {
-  container: {
-    display: 'flex',
-    flex: 1,
-    flexDirection: 'column',
-    background: 'linear-gradient(rgba(52, 156, 216) 90%, white)',
-    alignItems: 'center',
-  },
-  title: {
-    fontSize: 150,
-    fontFamily: 'Bungee Shade',
-    margin: '.6em 0em 0.1em 0em',
-    color: 'black',
-  },
-  subText: {
-    fontSize: 15,
-    marginTop: '0em',
-    color: 'white',
   }
 }
 

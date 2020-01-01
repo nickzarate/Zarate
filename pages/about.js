@@ -1,10 +1,9 @@
 import Layout from '../components/Layout'
-import { darkGray } from '../assets/colors'
 
 const About = () => (
-  <Layout>
-    <h1 style={{ backgroundColor: darkGray, marginTop: 0, height: 1000 }}>About.</h1>
-  </Layout>
+  <div className='about flexrow'>
+    <h1 style={{ marginTop: 0 }}></h1>
+  </div>
 )
 
 export default About
