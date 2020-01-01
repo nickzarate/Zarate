@@ -9,7 +9,7 @@ const Layout = (props) => {
   return (
     <div className='base flexcol'>
       <Meta />
-      <Navbar path={ router.asPath.substr(1) } />
+      <Navbar />
       { props.children }
     </div>
   )
