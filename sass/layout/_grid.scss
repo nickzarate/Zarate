@@ -1,0 +1,17 @@
+// Contains all styles related to grid layout of components
+
+.flexrow {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+}
+
+.flexcol {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.container {
+  
+}

@@ -8,37 +8,30 @@ class Navbar extends PureComponent {
     super(props)
     this.state = {
       tabs: ['about', 'projects', 'blog'],
-      active: '',
+      active: -1
     }
   }
 
-  handleClick = (tab) => {
+  handleClick = (index) => {
     this.setState({
-      active: tab
-    });
+      active: index
+    })
   }
 
   render() {
     return (
-      <div style={ styles.container }>
+      <div id='navbar' className='flexcol'>
         { this.state.tabs.map((tab, index) =>
-          <Tab key={ tab } tab={ tab } onClick={ this.handleClick } active={ this.state.active === tab }>{ tab }</Tab>
-        )}
+          <Tab
+            key={ index }
+            active={ this.state.active === index }
+            tab={ tab }
+            index={ index }
+            onClick={ this.handleClick } />
+        ) }
       </div>
     )
   }
-}
-
-let styles = {
-  container: {
-    position: 'fixed',
-    zIndex: 2,
-    display: 'flex',
-    flexDirection: 'column',
-    left: '4em',
-    top: '4em',
-    // backgroundColor: 'green'
-  },
 }
 
 export default Navbar

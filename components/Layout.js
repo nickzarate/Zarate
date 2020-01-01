@@ -1,21 +1,13 @@
 import Navbar from './Navbar'
 import { useRouter } from 'next/router'
 import Meta from './Meta'
+import '../sass/main.scss'
 
-const layoutStyle = {
-  fontFamily: 'futura',
-  display: 'flex',
-  height: '100vh',
-  margin: 0,
-  padding: 0,
-  'zIndex': 0,
-}
-
-const Layout = props => {
+const Layout = (props) => {
   const router = useRouter()
 
   return (
-    <div style={ layoutStyle }>
+    <div className='base flexcol'>
       <Meta />
       <Navbar path={ router.asPath.substr(1) } />
       { props.children }

@@ -20,42 +20,164 @@ import News from '../public/icons/news.svg'
 import CloudData from '../public/icons/cloud-data.svg'
 import USB from '../public/icons/usb.svg'
 import Pin from '../public/icons/pin.svg'
+import { shuffle, whichTransitionEvent } from '../utils'
 
 class Icons extends Component {
   constructor(props) {
     super(props)
+    this.state = {
+      order: shuffle([...Array(20).keys()])
+    }
+  }
+
+  componentDidMount() {
+    // Assign every Icon: unique Id based on random order in state
+    //                 && (x,y) coordinate using Custom CSS Properties
+    let icontainers = document.getElementsByClassName('icon-container')
+    this.state.order.map((num, i) => {
+      icontainers[i].setAttribute('id', 'icon-container' + num)
+      icontainers[i].style.setProperty('--y', 'var(--y' + num + ')')
+      icontainers[i].style.setProperty('--x', 'var(--x' + num + ')')
+    })
+
+    // Set scroll position and animation state
+    let scrollPos = 0
+    let animateDown = false
+    window.addEventListener('scroll', (event) => {
+      // Check if we are scrolling up
+      if (animateDown && window.scrollY < 250 && (document.body.getBoundingClientRect()).top > scrollPos) {
+        // Set the state of the animation
+        animateDown = false
+
+        // Undo 'gather' animation by setting visibility property to 'visible', then removing animation class
+        let icontainers = document.getElementsByClassName('icon-container')
+        for (let i = 0; i < icontainers.length; i++) {
+          if (window.getComputedStyle(icontainers[i]).getPropertyValue('visibility') === 'hidden') {
+            icontainers[i].style.setProperty('visibility', 'visible')
+          }
+          icontainers[i].classList.remove('gather-animate')
+        }
+
+        // Resume icon floating animation
+        let icons = document.getElementsByClassName('icon')
+        window.setTimeout(() => {
+          for (let i = 0; i < icons.length; i++) {
+            icons[i].style.setProperty('animation-play-state', 'running')
+          }
+        }, 100)
+
+      // Else check if we are scrolling down
+      } else if (!animateDown && window.scrollY > 250 && (document.body.getBoundingClientRect()).top <= scrollPos) {
+        // Set the state of the animation
+        animateDown = true
+
+        // Pause icon floating animation
+        let icons = document.getElementsByClassName('icon')
+        for (let i = 0; i < icons.length; i++) {
+          icons[i].style.setProperty('animation-play-state', 'paused')
+        }
+
+        // Initiate 'gather' animation for icon wrappers
+        let icontainers = document.getElementsByClassName('icon-container')
+        window.setTimeout(() => {
+          for (let j = 0; j < icontainers.length; j++) {
+            icontainers[j].classList.add('gather-animate')
+
+            // Create listener for the end of 'gather' animation, then set visibility to hidden
+            let transitionEvent = whichTransitionEvent()
+            let custFunc = function(event) {
+              icontainers[j].removeEventListener(transitionEvent, custFunc)
+              if (animateDown) {
+                icontainers[j].style.setProperty('visibility', 'hidden')
+              }
+            }
+            icontainers[j].addEventListener(transitionEvent, custFunc)
+          }
+        }, 100)
+      }
+
+      // Set scroll position
+      scrollPos = (document.body.getBoundingClientRect()).top
+    })
+  }
+
+  handleHover = (e) => {
+    e.currentTarget.style.setProperty('animation-play-state', 'paused')
+  }
+
+  handleLeave = (e) => {
+    e.currentTarget.style.setProperty('animation-play-state', 'running')
   }
 
   render () {
     return (
-      <div style={{display: 'flex', flexDirection: 'row'}}>
-        <Cloud style={{ width: this.props.width, height: this.props.height }} />
-        <Code style={{ width: this.props.width, height: this.props.height }} />
-        <Chip style={{ width: this.props.width, height: this.props.height }} />
-        <Audio style={{ width: this.props.width, height: this.props.height }} />
-        <Microphone style={{ width: this.props.width, height: this.props.height }} />
-        <Earth style={{ width: this.props.width, height: this.props.height }} />
-        <Binary style={{ width: this.props.width, height: this.props.height }} />
-        <Youtube style={{ width: this.props.width, height: this.props.height }} />
-        <Message style={{ width: this.props.width, height: this.props.height }} />
-        <Folder style={{ width: this.props.width, height: this.props.height }} />
-        <Dropbox style={{ width: this.props.width, height: this.props.height }} />
-        <Drive style={{ width: this.props.width, height: this.props.height }} />
-        <HardDisk style={{ width: this.props.width, height: this.props.height }} />
-        <Screen style={{ width: this.props.width, height: this.props.height }} />
-        <MemoryCard style={{ width: this.props.width, height: this.props.height }} />
-        <Server style={{ width: this.props.width, height: this.props.height }} />
-        <Picture style={{ width: this.props.width, height: this.props.height }} />
-        <News style={{ width: this.props.width, height: this.props.height }} />
-        <CloudData style={{ width: this.props.width, height: this.props.height }} />
-        <USB style={{ width: this.props.width, height: this.props.height }} />
-        <Pin style={{ width: this.props.width, height: this.props.height }} />
+      <div>
+        <div className='icon-container'>
+          <Cloud className='icon' onMouseEnter={ this.handleHover } onMouseLeave={ this.handleLeave } />
+        </div>
+        <div className='icon-container'>
+          <Binary className='icon' onMouseEnter={ this.handleHover } onMouseLeave={ this.handleLeave } />
+        </div>
+        <div className='icon-container'>
+          <Youtube className='icon' onMouseEnter={ this.handleHover } onMouseLeave={ this.handleLeave } />
+        </div>
+        <div className='icon-container'>
+          <Folder className='icon' onMouseEnter={ this.handleHover } onMouseLeave={ this.handleLeave } />
+        </div>
+        <div className='icon-container'>
+          <Dropbox className='icon' onMouseEnter={ this.handleHover } onMouseLeave={ this.handleLeave } />
+        </div>
+        <div className='icon-container'>
+          <Drive className='icon' onMouseEnter={ this.handleHover } onMouseLeave={ this.handleLeave } />
+        </div>
+        <div className='icon-container'>
+          <HardDisk className='icon' onMouseEnter={ this.handleHover } onMouseLeave={ this.handleLeave } />
+        </div>
+        <div className='icon-container'>
+          <Screen className='icon' onMouseEnter={ this.handleHover } onMouseLeave={ this.handleLeave } />
+        </div>
+        <div className='icon-container'>
+          <MemoryCard className='icon' onMouseEnter={ this.handleHover } onMouseLeave={ this.handleLeave } />
+        </div>
+        <div className='icon-container'>
+          <Code className='icon' onMouseEnter={ this.handleHover } onMouseLeave={ this.handleLeave } />
+        </div>
+        <div className='icon-container'>
+          <Chip className='icon' onMouseEnter={ this.handleHover } onMouseLeave={ this.handleLeave } />
+        </div>
+        <div className='icon-container'>
+          <Audio className='icon' onMouseEnter={ this.handleHover } onMouseLeave={ this.handleLeave } />
+        </div>
+        <div className='icon-container'>
+          <Microphone className='icon' onMouseEnter={ this.handleHover } onMouseLeave={ this.handleLeave } />
+        </div>
+        <div className='icon-container'>
+          <Earth className='icon' onMouseEnter={ this.handleHover } onMouseLeave={ this.handleLeave } />
+        </div>
+        <div className='icon-container'>
+          <Message className='icon' onMouseEnter={ this.handleHover } onMouseLeave={ this.handleLeave } />
+        </div>
+        <div className='icon-container'>
+          <Picture className='icon' onMouseEnter={ this.handleHover } onMouseLeave={ this.handleLeave } />
+        </div>
+        <div className='icon-container'>
+          <News className='icon' onMouseEnter={ this.handleHover } onMouseLeave={ this.handleLeave } />
+        </div>
+        <div className='icon-container'>
+          <CloudData className='icon' onMouseEnter={ this.handleHover } onMouseLeave={ this.handleLeave } />
+        </div>
+        <div className='icon-container'>
+          <USB className='icon' onMouseEnter={ this.handleHover } onMouseLeave={ this.handleLeave } />
+        </div>
+        <div className='icon-container'>
+          <Pin className='icon' onMouseEnter={ this.handleHover } onMouseLeave={ this.handleLeave } />
+        </div>
+        <div>
+          <Server id='database-icon' />
+        </div>
       </div>
     )
   }
-}
-
-const styles = {
 }
 
 export default Icons

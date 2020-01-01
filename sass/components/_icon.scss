@@ -1,0 +1,210 @@
+:root {
+  --y0: calc(13em + 30vh);
+  --y1: calc(13em + 10vh);
+  --y2: calc(13em + 25vh);
+  --y3: calc(5em + 75vh);
+  --y4: calc(10em + 10vh);
+  --y5: calc(18em + 30vh);
+  --y6: calc(15em + 25vh);
+  --y7: calc(18em + 30vh);
+  --y8: calc(10em + 25vh);
+  --y9: calc(5em + 65vh);
+  --y10: calc(8em + 43vh);
+  --y11: calc(10em + 25vh);
+  --y12: calc(10em + 20vh);
+  --y13: calc(5em + 70vh);
+  --y14: calc(5em + 75vh);
+  --y15: calc(16em);
+  --y16: calc(12em);
+  --y17: calc(9em);
+  --y18: calc(4em);
+  --y19: calc(7em);
+
+  --x0: 60vw;
+  --x1: 45vw;
+  --x2: 37vw;
+  --x3: 14vw;
+  --x4: 10vw;
+  --x5: 70vw;
+  --x6: 80vw;
+  --x7: 55vw;
+  --x8: 22vw;
+  --x9: 27vw;
+  --x10: 6vw;
+  --x11: 88vw;
+  --x12: 63vw;
+  --x13: 40vw;
+  --x14: 90vw;
+  --x15: 75vw;
+  --x16: 93vw;
+  --x17: 80vw;
+  --x18: 90vw;
+  --x19: 15vw;
+}
+
+.icon {
+  width: .8em;
+  height: .8em;
+  animation: float 3s ease-in-out infinite;
+  background-color: transparent;
+  color: transparent;
+}
+
+.icon-container {
+  width: 1em;
+  height: 1em;
+  position: absolute;
+  background-color: transparent;
+  color: transparent;
+}
+
+.icon-container:hover {
+  transform: scale(3);
+}
+
+.gather-animate {
+  transform: translate(calc(51vw - var(--x)), calc(120vh - var(--y)));
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0em);
+    box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+  }
+  50% {
+    transform: translateY(-.5em);
+    box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+  }
+  100% {
+    transform: translateY(0em);
+    box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+  }
+}
+
+#database-icon {
+  width: 1.5em;
+  height: 1.5em;
+  position: absolute;
+  left: 50vw;
+  top: 120vh;
+}
+
+#icon-container0 {
+  left: var(--x0);
+  top: var(--y0);
+  transition: transform .8s cubic-bezier(.63, 0.70, 0.5, 0.95);
+}
+
+#icon-container1 {
+  left: var(--x1);
+  top: var(--y1);
+  transition: transform .54s cubic-bezier(.63, 0.70, 0.5, 0.95);
+}
+
+#icon-container2 {
+  left: var(--x2);
+  top: var(--y2);
+  transition: transform .8s cubic-bezier(.63, 0.70, 0.5, 0.95);
+}
+
+#icon-container3 {
+  left: var(--x3);
+  top: var(--y3);
+  transition: transform .65s cubic-bezier(.63, 0.70, 0.5, 0.95);
+}
+
+#icon-container4 {
+  left: var(--x4);
+  top: var(--y4);
+  transition: transform .93s cubic-bezier(.63, 0.70, 0.5, 0.95);
+}
+
+#icon-container5 {
+  left: var(--x5);
+  top: var(--y5);
+  transition: transform .84s cubic-bezier(.63, 0.70, 0.5, 0.95);
+}
+
+#icon-container6 {
+  left: var(--x6);
+  top: var(--y6);
+  transition: transform .69s cubic-bezier(.63, 0.70, 0.5, 0.95);
+}
+
+#icon-container7 {
+  left: var(--x7);
+  top: var(--y7);
+  transition: transform .95s cubic-bezier(.63, 0.70, 0.5, 0.95);
+}
+
+#icon-container8 {
+  left: var(--x8);
+  top: var(--y8);
+  transition: transform .87s cubic-bezier(.63, 0.70, 0.5, 0.95);
+}
+
+#icon-container9 {
+  left: var(--x9);
+  top: var(--y9);
+  transition: transform .93s cubic-bezier(.63, 0.70, 0.5, 0.95);
+}
+
+#icon-container10 {
+  left: var(--x10);
+  top: var(--y10);
+  transition: transform 1s cubic-bezier(.63, 0.70, 0.5, 0.95);
+}
+
+#icon-container11 {
+  left: var(--x11);
+  top: var(--y11);
+  transition: transform .85s cubic-bezier(.63, 0.70, 0.5, 0.95);
+}
+
+#icon-container12 {
+  left: var(--x12);
+  top: var(--y12);
+  transition: transform .77s cubic-bezier(.63, 0.70, 0.5, 0.95);
+}
+
+#icon-container13 {
+  left: var(--x13);
+  top: var(--y13);
+  transition: transform .64s cubic-bezier(.63, 0.70, 0.5, 0.95);
+}
+
+#icon-container14 {
+  left: var(--x14);
+  top: var(--y14);
+  transition: transform .72s cubic-bezier(.63, 0.70, 0.5, 0.95);
+}
+
+#icon-container15 {
+  left: var(--x15);
+  top: var(--y15);
+  transition: transform .7s cubic-bezier(.63, 0.70, 0.5, 0.95);
+}
+
+#icon-container16 {
+  left: var(--x16);
+  top: var(--y16);
+  transition: transform .75s cubic-bezier(.63, 0.70, 0.5, 0.95);
+}
+
+#icon-container17 {
+  left: var(--x17);
+  top: var(--y17);
+  transition: transform .9s cubic-bezier(.63, 0.70, 0.5, 0.95);
+}
+
+#icon-container18 {
+  left: var(--x18);
+  top: var(--y18);
+  transition: transform .6s cubic-bezier(.63, 0.70, 0.5, 0.95);
+}
+
+#icon-container19 {
+  left: var(--x19);
+  top: var(--y19);
+  transition: transform .5s cubic-bezier(.63, 0.70, 0.5, 0.95);
+}

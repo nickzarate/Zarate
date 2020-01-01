@@ -1,0 +1,35 @@
+// Contains all styles related to navigation
+
+@media screen and (min-width: 34em) {
+  #navbar {
+    left: 1.5em;
+    top: 2.5em;
+    position: fixed;
+  }
+}
+
+@media screen and (max-width: 34em) {
+  #navbar {
+    left: 0.5em;
+    top: 0.5em;
+    position: fixed;
+  }
+}
+
+.navtab {
+  background-color: $dark;
+  border-radius: 3px;
+  color: white;
+  font-size: .5em;
+  font-weight: bold;
+  margin: 0.3em 0em 0.3em 0em;
+  padding: 0em .3em 0em .3em;
+  text-transform: uppercase;
+  width: fit-content;
+  z-index: 1;
+}
+
+.navtab.active {
+  color: $main;
+  background-color: $dark;
+}
