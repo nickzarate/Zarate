@@ -3,14 +3,14 @@ import { Component } from 'react'
 import Home from './home'
 import About from './about'
 import Projects from './projects'
-import Blog from './blog'
+import Contact from './contact'
 
 const Main = () => (
   <Layout>
     <Home />
     <About />
     <Projects />
-    <Blog />
+    <Contact />
   </Layout>
 )
 
