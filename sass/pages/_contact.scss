@@ -1,0 +1,44 @@
+#contact {
+  background: $light;
+}
+
+.cta-header {
+  color: $main;
+  font-weight: bold;
+  margin: 0em;
+  font-size: 2em;
+  align-self: center;
+}
+
+#metrics {
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.metrics {
+  color: $medium;
+  font-size: .7em;
+}
+
+#email-direct {
+  text-decoration: underline;
+  background-color: transparent;
+  border: 0;
+  margin-top: .9em;
+  font-family: Alegreya Sans
+}
+
+#email-direct:hover {
+  color: black;
+}
+
+#email-direct:focus {
+  outline: none;
+  color: $medium;
+}
+
+.alt-text {
+  color: $medium;
+  font-size: .7em;
+  margin-top: 1em;
+}

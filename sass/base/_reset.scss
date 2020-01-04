@@ -1,7 +1,8 @@
 body {
-  margin: 0;
-  padding: 0;
+  margin: 0em;
+  padding: 0em;
   z-index: 0;
+  font-family: Alegreya Sans;
 }
 
 @media screen and (min-width: 25em) and (max-width: 75em) {
@@ -17,13 +18,13 @@ body {
 }
 
 @media screen and (min-height: 34em) {
-  .base {
+  #base {
     height: 480vh;
   }
 }
 
 @media screen and (max-height: 34em) {
-  .base {
+  #base {
     height: 2610px;
   }
 }

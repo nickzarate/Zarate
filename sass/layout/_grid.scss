@@ -1,17 +1,18 @@
 // Contains all styles related to grid layout of components
 
-.flexrow {
+.row {
   display: flex;
   flex: 1;
   flex-direction: row;
 }
 
-.flexcol {
+.col {
   display: flex;
   flex: 1;
   flex-direction: column;
 }
 
 .container {
-  
+  padding: 2.5em;
+  align-items: center;
 }

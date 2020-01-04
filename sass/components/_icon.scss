@@ -46,16 +46,12 @@
   width: .8em;
   height: .8em;
   animation: float 3s ease-in-out infinite;
-  background-color: transparent;
-  color: transparent;
 }
 
 .icon-container {
   width: 1em;
   height: 1em;
   position: absolute;
-  background-color: transparent;
-  color: transparent;
 }
 
 .icon-container:hover {
@@ -87,6 +83,7 @@
   position: absolute;
   left: 50vw;
   top: 120vh;
+  box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
 }
 
 #icon-container0 {

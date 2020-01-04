@@ -30,6 +30,7 @@ class Icons extends Component {
     }
   }
 
+
   componentDidMount() {
     // Assign every Icon: unique Id based on random order in state
     //                 && (x,y) coordinate using Custom CSS Properties
@@ -101,76 +102,79 @@ class Icons extends Component {
     })
   }
 
-  handleHover = (e) => {
+
+  pauseAnimation = (e) => {
     e.currentTarget.style.setProperty('animation-play-state', 'paused')
   }
 
-  handleLeave = (e) => {
+
+  resumeAnimation = (e) => {
     e.currentTarget.style.setProperty('animation-play-state', 'running')
   }
+
 
   render () {
     return (
       <div>
         <div className='icon-container'>
-          <Cloud className='icon' onMouseEnter={ this.handleHover } onMouseLeave={ this.handleLeave } />
+          <Cloud className='icon' onMouseEnter={ this.pauseAnimation } onMouseLeave={ this.resumeAnimation } />
         </div>
         <div className='icon-container'>
-          <Binary className='icon' onMouseEnter={ this.handleHover } onMouseLeave={ this.handleLeave } />
+          <Binary className='icon' onMouseEnter={ this.pauseAnimation } onMouseLeave={ this.resumeAnimation } />
         </div>
         <div className='icon-container'>
-          <Youtube className='icon' onMouseEnter={ this.handleHover } onMouseLeave={ this.handleLeave } />
+          <Youtube className='icon' onMouseEnter={ this.pauseAnimation } onMouseLeave={ this.resumeAnimation } />
         </div>
         <div className='icon-container'>
-          <Folder className='icon' onMouseEnter={ this.handleHover } onMouseLeave={ this.handleLeave } />
+          <Folder className='icon' onMouseEnter={ this.pauseAnimation } onMouseLeave={ this.resumeAnimation } />
         </div>
         <div className='icon-container'>
-          <Dropbox className='icon' onMouseEnter={ this.handleHover } onMouseLeave={ this.handleLeave } />
+          <Dropbox className='icon' onMouseEnter={ this.pauseAnimation } onMouseLeave={ this.resumeAnimation } />
         </div>
         <div className='icon-container'>
-          <Drive className='icon' onMouseEnter={ this.handleHover } onMouseLeave={ this.handleLeave } />
+          <Drive className='icon' onMouseEnter={ this.pauseAnimation } onMouseLeave={ this.resumeAnimation } />
         </div>
         <div className='icon-container'>
-          <HardDisk className='icon' onMouseEnter={ this.handleHover } onMouseLeave={ this.handleLeave } />
+          <HardDisk className='icon' onMouseEnter={ this.pauseAnimation } onMouseLeave={ this.resumeAnimation } />
         </div>
         <div className='icon-container'>
-          <Screen className='icon' onMouseEnter={ this.handleHover } onMouseLeave={ this.handleLeave } />
+          <Screen className='icon' onMouseEnter={ this.pauseAnimation } onMouseLeave={ this.resumeAnimation } />
         </div>
         <div className='icon-container'>
-          <MemoryCard className='icon' onMouseEnter={ this.handleHover } onMouseLeave={ this.handleLeave } />
+          <MemoryCard className='icon' onMouseEnter={ this.pauseAnimation } onMouseLeave={ this.resumeAnimation } />
         </div>
         <div className='icon-container'>
-          <Code className='icon' onMouseEnter={ this.handleHover } onMouseLeave={ this.handleLeave } />
+          <Code className='icon' onMouseEnter={ this.pauseAnimation } onMouseLeave={ this.resumeAnimation } />
         </div>
         <div className='icon-container'>
-          <Chip className='icon' onMouseEnter={ this.handleHover } onMouseLeave={ this.handleLeave } />
+          <Chip className='icon' onMouseEnter={ this.pauseAnimation } onMouseLeave={ this.resumeAnimation } />
         </div>
         <div className='icon-container'>
-          <Audio className='icon' onMouseEnter={ this.handleHover } onMouseLeave={ this.handleLeave } />
+          <Audio className='icon' onMouseEnter={ this.pauseAnimation } onMouseLeave={ this.resumeAnimation } />
         </div>
         <div className='icon-container'>
-          <Microphone className='icon' onMouseEnter={ this.handleHover } onMouseLeave={ this.handleLeave } />
+          <Microphone className='icon' onMouseEnter={ this.pauseAnimation } onMouseLeave={ this.resumeAnimation } />
         </div>
         <div className='icon-container'>
-          <Earth className='icon' onMouseEnter={ this.handleHover } onMouseLeave={ this.handleLeave } />
+          <Earth className='icon' onMouseEnter={ this.pauseAnimation } onMouseLeave={ this.resumeAnimation } />
         </div>
         <div className='icon-container'>
-          <Message className='icon' onMouseEnter={ this.handleHover } onMouseLeave={ this.handleLeave } />
+          <Message className='icon' onMouseEnter={ this.pauseAnimation } onMouseLeave={ this.resumeAnimation } />
         </div>
         <div className='icon-container'>
-          <Picture className='icon' onMouseEnter={ this.handleHover } onMouseLeave={ this.handleLeave } />
+          <Picture className='icon' onMouseEnter={ this.pauseAnimation } onMouseLeave={ this.resumeAnimation } />
         </div>
         <div className='icon-container'>
-          <News className='icon' onMouseEnter={ this.handleHover } onMouseLeave={ this.handleLeave } />
+          <News className='icon' onMouseEnter={ this.pauseAnimation } onMouseLeave={ this.resumeAnimation } />
         </div>
         <div className='icon-container'>
-          <CloudData className='icon' onMouseEnter={ this.handleHover } onMouseLeave={ this.handleLeave } />
+          <CloudData className='icon' onMouseEnter={ this.pauseAnimation } onMouseLeave={ this.resumeAnimation } />
         </div>
         <div className='icon-container'>
-          <USB className='icon' onMouseEnter={ this.handleHover } onMouseLeave={ this.handleLeave } />
+          <USB className='icon' onMouseEnter={ this.pauseAnimation } onMouseLeave={ this.resumeAnimation } />
         </div>
         <div className='icon-container'>
-          <Pin className='icon' onMouseEnter={ this.handleHover } onMouseLeave={ this.handleLeave } />
+          <Pin className='icon' onMouseEnter={ this.pauseAnimation } onMouseLeave={ this.resumeAnimation } />
         </div>
         <div>
           <Server id='database-icon' />

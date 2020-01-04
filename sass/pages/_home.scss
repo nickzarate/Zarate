@@ -1,21 +1,23 @@
 #home-title {
-  font-size: 7em;
+  font-size: 8em;
   display: flex;
-  font-family: Bungee Shade;
+  font-family: Rubik Mono One;
   color: white;
-  // background-color: $dark;
-  margin: .3em 0em .0em 0em;
+  margin: 0em;
   font-weight: normal;
 }
 
 #home-subtitle {
   display: flex;
-  font-size: .75em;
-  margin-top: 2em;
+  // font-family: roboto;
+  font-size: .85em;
+  font-style: italic;
+  margin-top: 0em;
+  font-weight: normal;
   color: $medium;
 }
 
-.home {
+#home {
   align-items: center;
   justify-content: flex-start;
   background: linear-gradient(rgb(84, 84, 84) 90%, white);

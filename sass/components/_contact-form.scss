@@ -1,0 +1,53 @@
+#contact-form {
+  align-self: center;
+}
+
+.contact-input {
+  height: 1.8em;
+  width: 23em;
+  font-size: .75em;
+  margin-top: .2em;
+  padding-left: .5em;
+  color: $dark;
+  background-color: white;
+  border: 0;
+}
+
+.contact-input:focus {
+  outline-width: 0;
+}
+
+.contact-input::placeholder {
+  color: $medium-light;
+  font-family: Alegreya Sans;
+}
+
+#contact-msg {
+  margin-top: .2em;
+  height: 8em;
+  resize: none;
+}
+
+#email-submit {
+  background-color: white;
+  color: $dark;
+  text-align: center;
+  font-family: Alegreya Sans;
+  font-size: .8em;
+  height: 1.8em;
+  margin-top: .2em;
+  padding-top: .2em;
+  font-weight: bold;
+  border: 0;
+  box-shadow: 1px 2px 2px #888888;
+}
+
+#email-submit:hover {
+  background-color: $main;
+  color: white;
+}
+
+#email-submit:focus {
+  outline: none;
+  box-shadow: none;
+}

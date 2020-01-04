@@ -1,8 +1,8 @@
-import Layout from '../components/Layout'
+import Project from '../components/Project'
 
 const Projects = () => (
-  <div className='projects flexrow'>
-    <h1 style={{ backgroundColor: 'gray', marginTop: 0 }}>Projects.</h1>
+  <div id='projects' className='col'>
+    <Project />
   </div>
 )
 

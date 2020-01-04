@@ -3,11 +3,14 @@
 @import 'utils/variables';
 
 @import 'base/reset';
-@import 'base/typography';
 
 @import 'layout/grid';
-@import 'layout/navigation';
 
 @import 'components/icon';
+@import 'components/navbar';
+@import 'components/contact-form';
 
 @import 'pages/home';
+@import 'pages/about';
+@import 'pages/projects';
+@import 'pages/contact';
