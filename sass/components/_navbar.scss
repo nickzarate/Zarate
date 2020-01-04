@@ -17,19 +17,23 @@
 }
 
 .navtab {
-  background-color: $dark;
-  border-radius: 3px;
-  color: white;
+  background-color: transparent;
+  color: $medium;
   font-size: .5em;
+  font-family: roboto;
   font-weight: bold;
-  margin: 0.3em 0em 0.3em 0em;
-  padding: 0em .3em 0em .3em;
+  margin: 0.5em 0em 0.5em 0em;
+  padding: 0em .4em 0em .4em;
   text-transform: uppercase;
   width: fit-content;
-  z-index: 1;
 }
 
 .navtab.active {
-  color: $main;
-  background-color: $dark;
+  color: black;
+  font-size: .5em;
+  font-weight: bold;
+}
+
+.navtab:hover {
+  color: black;
 }

@@ -7,7 +7,7 @@ const Layout = (props) => {
   const router = useRouter()
 
   return (
-    <div className='base flexcol'>
+    <div id='base' className='col'>
       <Meta />
       <Navbar />
       { props.children }
