@@ -7,27 +7,27 @@ class Navbar extends PureComponent {
   constructor(props) {
     super(props)
     this.state = {
-      tabs: ['about', 'projects', 'blog'],
-      active: -1
+      tabs: ['about', 'projects', 'contact'],
+      activeTabIndex: -1
     }
   }
 
-  handleClick = (index) => {
+  setActiveTabIndex = (index) => {
     this.setState({
-      active: index
+      activeTabIndex: index
     })
   }
 
   render() {
     return (
-      <div id='navbar' className='flexcol'>
+      <div id='navbar' className='col'>
         { this.state.tabs.map((tab, index) =>
           <Tab
             key={ index }
-            active={ this.state.active === index }
+            active={ this.state.activeTabIndex === index }
             tab={ tab }
             index={ index }
-            onClick={ this.handleClick } />
+            onClick={ this.setActiveTabIndex } />
         ) }
       </div>
     )

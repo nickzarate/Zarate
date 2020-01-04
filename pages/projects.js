@@ -1,5 +1,8 @@
+import Project from '../components/Project'
+
 const Projects = () => (
-  <div id='projects' className='flexrow'>
+  <div id='projects' className='col'>
+    <Project />
   </div>
 )
 

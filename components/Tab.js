@@ -1,7 +1,7 @@
-const Tab = (props) => (
-  <p className={ 'navtab' + (props.active ? ' active' : '') }
-     onClick={ () => props.onClick(props.index) }>
-    { props.tab }
+const Tab = ({ active, onClick, index, tab }) => (
+  <p className={ 'navtab' + (active ? ' active' : '') }
+     onClick={ () => onClick(index) }>
+    { tab }
   </p>
 )
 

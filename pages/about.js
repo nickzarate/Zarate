@@ -1,5 +1,5 @@
 const About = () => (
-  <div id='about' className='flexrow'>
+  <div id='about' className='row'>
   </div>
 )
 
